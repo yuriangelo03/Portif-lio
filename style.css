@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  color: #e2e8f0;
+}
+/*Titulo*/
+header{
+    text-align: center;
+    padding: 100px 20px;
+}
+header {
+  text-align: center;
+  padding: 120px 20px;
+  background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c') no-repeat center/cover;
+  position: relative;
+}
+/* camada escura por cima da imagem */
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.7);
+}
+
+/* garante que o texto fique acima */
+header h1,
+header p,
+header .btn {
+  position: relative;
+  z-index: 1;
+}
+header h1{
+    font-size: 40px;
+    font-weight: 600px;
+}
+header p{
+    margin-top: 10px;
+    font-size: 18px;
+    color: #94a3b8;
+}
+/* secões */
+section{
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+h2{
+    font-family: 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid #22c55e;
+    padding-left: 10px;
+}
+/*cards*/
+.card{
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent, rgba(34,197,94,0.2), transparent);
+  transform: rotate(25deg);
+  top: -50%;
+  left: -50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    border-color: #22c55e;
+}
+/*botão*/
+.btn{
+    background: #22c55e;
+    color: #020617;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.btn:hover{
+    background: #16a34a;
+    transform: scale(1.05);
+}
+.btn {
+  background: transparent;
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  padding: 12px 28px;
+  border-radius: 8px;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #22c55e;
+  color: #020617;
+}
+/*contato*/
+#contato p{
+    margin-bottom: 10px;
+}
+/* responsivo*/
+@media (max-width: 600px){
+    header h1{
+        font-size: 32px;
+    }
+}
+h2{
+    font-size: 22px;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
